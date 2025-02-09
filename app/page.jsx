@@ -2,8 +2,9 @@ import React from 'react'
 import Hero from '@/components/Hero';
 import InfoBoxes from '@/components/InfoBoxes'
 import HomeProperties from '@/components/HomeProperties';
+import connectDB from '@/config/database';
 
-const page = () => {
+const HomePage = () => {
   return (
     <>
       <Hero />
@@ -11,6 +12,6 @@ const page = () => {
       <HomeProperties />
     </>
   );
-}
+};
 
-export default page
+export default HomePage;

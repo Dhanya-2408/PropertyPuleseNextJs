@@ -1,9 +1,15 @@
 import React from 'react'
 import properties from '@/mock_data/properties.json';
 import PropertyCard from '@/components/PropertyCard';
+import connectDB from '@/config/database';
+import Property from '@/models/Property';
 
-const PropertiesPage = () => {
-  console.log(properties)
+const PropertiesPage = async () => {
+
+  await connectDB();
+  const  propertiesdb = await Property.find({}).lean();
+  console.log("propertiesdb", propertiesdb);
+
   return <>
    <section className='px-4 py-6'>
         <div className='container-xl lg:container m-auto px-4 py-6'>
