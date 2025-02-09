@@ -1,15 +1,14 @@
 import React from 'react'
-import "@/assets/styles/globals.css"
-import InfoBoxes from '@/components/InfoBoxes'
 import Hero from '@/components/Hero';
-import PropertiesPage from './properties/page';
+import InfoBoxes from '@/components/InfoBoxes'
+import HomeProperties from '@/components/HomeProperties';
 
 const page = () => {
   return (
     <>
       <Hero />
       <InfoBoxes />
-      <PropertiesPage/>
+      <HomeProperties />
     </>
   );
 }
