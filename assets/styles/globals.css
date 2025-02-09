@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "GentiumBookBasic";
+    src: url("/GentiumBookBasic-Italic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: normal;
+}
+
+body {
+    font-family: "GentiumBookBasic", sans-serif;
+}
