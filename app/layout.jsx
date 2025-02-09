@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import "@/assets/styles/globals.css";
+import "photoswipe/dist/photoswipe.css";
 
 
 export const  metadata = {
@@ -14,11 +15,11 @@ export const  metadata = {
   return (
     <html>
       <body>
-        <div className="grid min-h-screen grid-rows-[auto,1fr,auto]">
+        {/* <div className="grid min-h-screen grid-rows-[auto,1fr,auto]"> */}
           <Navbar />
           <main>{children}</main>
           <Footer />
-        </div>
+        {/* </div> */}
       </body>
     </html>
   );

@@ -8,7 +8,7 @@ const PropertiesPage = async () => {
 
   await connectDB();
   const  propertiesdb = await Property.find({}).lean();
-  console.log("propertiesdb", propertiesdb);
+
 
   return <>
    <section className='px-4 py-6'>
