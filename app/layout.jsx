@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import "@/assets/styles/globals.css";
 import "photoswipe/dist/photoswipe.css";
+import AuthProvider from './provider/AuthProvider';
 
 
 export const  metadata = {
@@ -13,15 +14,15 @@ export const  metadata = {
 
  const MainLayout = ({ children}) => {
   return (
-    <html>
-      <body>
-        {/* <div className="grid min-h-screen grid-rows-[auto,1fr,auto]"> */}
+    <AuthProvider>
+      <html>
+        <body className="grid min-h-screen grid-rows-[auto,1fr,auto]">
           <Navbar />
           <main>{children}</main>
           <Footer />
-        {/* </div> */}
-      </body>
-    </html>
+        </body>
+      </html>
+    </AuthProvider>
   );
 }
 

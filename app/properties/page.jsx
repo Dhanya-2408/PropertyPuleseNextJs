@@ -1,5 +1,4 @@
 import React from 'react'
-import properties from '@/mock_data/properties.json';
 import PropertyCard from '@/components/PropertyCard';
 import connectDB from '@/config/database';
 import Property from '@/models/Property';
@@ -7,7 +6,7 @@ import Property from '@/models/Property';
 const PropertiesPage = async () => {
 
   await connectDB();
-  const  propertiesdb = await Property.find({}).lean();
+  const properties = await Property.find({}).lean();
 
 
   return <>
