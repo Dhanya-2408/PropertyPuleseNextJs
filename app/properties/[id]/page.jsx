@@ -1,23 +1,24 @@
 import React from "react";
-import connectDB from "@/config/database";
-import Property from "@/models/Property";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
+import connectDB from "@/config/database";
+import Property from "@/models/Property";
 import PropertyHeaderImage from "@/components/property/PropertyHeaderImage";
 import PropertyDetails from "@/components/property/PropertyDetails";
-import { convertToSerializeableObject } from "@/utils/convertToObject";
 import BookmarkButton from "@/components/property/BookmarkButton";
 import ShareButtons from "@/components/property/ShareButtons";
 import PropertyImages from "@/components/property/PropertyImages";
 import PropertyContactForm from "@/components/property/PropertyContactForm";
+import { mongoose } from 'mongoose';
+import { convertToSerializeableObject } from "@/utils/convertToObject";
 
 const PropertyPage = async ({ params }) => {
     
-  await connectDB();
 
+ await connectDB();
+ const propertyDoc = await Property.findById(params.id).lean();
+ const property = convertToSerializeableObject(propertyDoc);
 
-  const propertiesdb = await Property.find({}).lean();
-  const property = propertiesdb[0];
 
   if (!property) {
     return (
