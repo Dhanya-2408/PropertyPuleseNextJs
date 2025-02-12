@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import "@/assets/styles/globals.css";
 import "photoswipe/dist/photoswipe.css";
 import AuthProvider from './provider/AuthProvider';
+import { ToastContainer } from "react-toastify";
 
 
 export const  metadata = {
@@ -20,6 +21,7 @@ export const  metadata = {
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <ToastContainer />
         </body>
       </html>
     </AuthProvider>
