@@ -30,6 +30,8 @@ async function addMessage(previousState, formData) {
     body: formData.get("message"),
   });
 
+  console.log(newMessage);
+
   await newMessage.save();
 
   return { submitted: true };
