@@ -19,8 +19,12 @@ async function bookmarkProperty(propertyId) {
   // Find user in database
   const user = await User.findById(userId);
 
+  if (!Array.isArray(user.bookmarks)) {
+    user.bookmarks = [];
+  }
+
   // Check if property is bookmarked
-  let isBookmarked = user.bookmarks.includes(propertyId);
+  let isBookmarked = user.bookmarks?.includes(propertyId);
   let message;
 
   if (isBookmarked) {

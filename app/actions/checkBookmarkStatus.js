@@ -21,7 +21,7 @@ async function checkBookmarkStatus(propertyId) {
   const user = await User.findById(userId);
 
   // Check if property is bookmarked
-  let isBookmarked = user.bookmarks.includes(propertyId);
+  let isBookmarked = user?.bookmarks?.includes(propertyId);
 
   return { isBookmarked };
 }
