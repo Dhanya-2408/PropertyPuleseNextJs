@@ -10,15 +10,14 @@ const PropertySearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // if (location === "" && propertyType === "All") {
-    //   router.push("/properties");
-    // } else {
-    //   const query = `?location=${location}&propertyType=${propertyType}`;
-    //   router.push(`/properties/search-results${query}`);
-    // }
+    if (location === "" && propertyType === "All") {
+      router.push("/properties");
+    } else {
+      const query = `?location=${location}&propertyType=${propertyType}`;
+      router.push(`/properties/search-results${query}`);
+    }
   };
-
+  
   return (
     <form
       onSubmit={handleSubmit}
