@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import { GlobalProvider } from '@/context/GlobalContext';
 import "@/assets/styles/globals.css";
 import "photoswipe/dist/photoswipe.css";
 import AuthProvider from './provider/AuthProvider';
@@ -15,16 +16,21 @@ export const  metadata = {
 
  const MainLayout = ({ children}) => {
   return (
+
+  
     <AuthProvider>
-      <html>
-        <body className="grid min-h-screen grid-rows-[auto,1fr,auto]">
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <ToastContainer />
-        </body>
-      </html>
+      <GlobalProvider>
+        <html lang='en'>
+         <body className="grid min-h-screen grid-rows-[auto,1fr,auto]">
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+            <ToastContainer />
+          </body>
+        </html>
+      </GlobalProvider>
     </AuthProvider>
+   
   );
 }
 
