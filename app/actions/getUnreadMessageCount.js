@@ -19,7 +19,6 @@ async function getUnreadMessageCount() {
     recipient: userId,
     read: false,
   });
-
   return { count };
 }
 
